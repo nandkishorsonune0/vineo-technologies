@@ -2,8 +2,13 @@ const Express=require("express");
 const fs = require("fs");
 const path = require("path");
 const PORT = 5000;
+const cors=require("cors")
+
+
+
 
 const server= Express();
+server.use(cors());
 
 server.get("/data",(req, res)=>{
     fs.readFile("./data.json", (err, data)=>{
